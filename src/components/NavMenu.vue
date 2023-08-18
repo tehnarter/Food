@@ -2,29 +2,26 @@
 import { RouterLink } from 'vue-router'
 import NavIcon from './NavIcon.vue'
 import BurgerClose from './BurgerClose.vue'
-function closeBurger() {
-	document.querySelector('.burger').classList.toggle('active')
-	document.querySelector('.nav').classList.toggle('open')
-}
 
-// const nav__menu = [
-// 	{ name: 'Home', path: '/' },
-// 	{ name: 'Menu', path: '/menu' },
-// 	{ name: 'Blogs', path: '#' },
-// 	{ name: 'About', path: '/about' },
-// 	{ name: 'Contacts', path: '/contacts' },
-// ]
-const nav__menu = [
+function closeBurger() {
+	document.querySelector('.burger').classList.remove('active')
+	document.querySelector('.nav').classList.remove('open')
+}
+function openBlogs() {
+	document.querySelector('.nav__link-item').classList.toggle('column')
+}
+const headerMenuList = [
 	{ name: 'Home', path: '/' },
 	{ name: 'Menu', path: '/menu' },
 	{
 		name: 'Blogs',
-		subItems: [
-			{ name: 'one', path: '#' },
-			{ name: 'two', path: '#' },
+		dropdown: [
+			{ name: '1 Column', path: '/one' },
+			{ name: '2 Columns', path: '/two' },
+			{ name: 'Sidebar Post', path: '/sidebar' },
 		],
 	},
-	{ name: 'About', path: '/about' },
+	{ name: 'About', path: '/About' },
 	{ name: 'Contacts', path: '/contacts' },
 ]
 </script>
@@ -35,12 +32,25 @@ const nav__menu = [
 		<div class="nav__row">
 			<nav class="nav__menu">
 				<ul class="nav__item">
-					<li class="nav__link" v-for="link in nav__menu">
-						<RouterLink @click="closeBurger" :to="link.path">{{
-							link.name
-						}}</RouterLink>
+					<li v-for="nav in headerMenuList" class="nav__link">
+						<RouterLink
+							v-if="!nav.dropdown"
+							@click="closeBurger"
+							:to="nav.path"
+						>
+							{{ nav.name }}
+						</RouterLink>
+
+						<div v-else @click="openBlogs">{{ nav.name }}</div>
+
+						<ul v-if="nav.dropdown" class="nav__link-item">
+							<li v-for="dd in nav.dropdown">
+								<RouterLink @click="closeBurger" :to="dd.path">
+									{{ dd.name }}
+								</RouterLink>
+							</li>
+						</ul>
 					</li>
-					<li></li>
 				</ul>
 			</nav>
 
@@ -114,12 +124,27 @@ const nav__menu = [
 		height: 12px;
 		background-color: #fff;
 		border-radius: 50%;
-		top: 55%;
+		top: 60px;
 		left: -25px;
 	}
+
 	// .nav__contacts
 
-	&__contacts {
+	&__link-item {
+		display: none;
+		li {
+			padding: 6px 0px 0px 0px;
+		}
+		&.column {
+			display: block;
+			padding: 6px 0px 0px 10px;
+			color: #fff;
+			font-family: Rufina;
+			font-size: 24px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+		}
 	}
 }
 .menu-nav {

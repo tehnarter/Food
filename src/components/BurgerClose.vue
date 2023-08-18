@@ -2,8 +2,8 @@
 // import { onUnmounted } from 'vue'
 
 function closeBurger() {
-	document.querySelector('.burger').classList.toggle('active')
-	document.querySelector('.nav').classList.toggle('open')
+	document.querySelector('.burger').classList.remove('active')
+	document.querySelector('.nav').classList.remove('open')
 }
 // onUnmounted(() => {
 //   document.querySelector('.burger').classList.remove('active')

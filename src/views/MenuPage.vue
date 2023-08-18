@@ -1,5 +1,6 @@
 <script setup>
 import FormReservation from '../components/FormReservation.vue'
+import MenuCard from '../components/MenuCard.vue'
 </script>
 <template>
 	<div class="menu">
@@ -26,27 +27,19 @@ import FormReservation from '../components/FormReservation.vue'
 						<img src="/img/menu-bl1-card.jpg" alt="" />
 					</div>
 					<div class="block-1__cards">
-						<div class="block-1__card card-menu">
-							<div class="card-menu__price">$20</div>
-							<div class="card-menu__title">Grilled Okra and Tomatoes</div>
-							<div class="card-menu__text">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							</div>
-						</div>
-						<div class="block-1__card card-menu">
-							<div class="card-menu__price">$18</div>
-							<div class="card-menu__title">Cucumber Salad</div>
-							<div class="card-menu__text">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							</div>
-						</div>
-						<div class="block-1__card card-menu">
-							<div class="card-menu__price">$12</div>
-							<div class="card-menu__title">Basil Pancakes</div>
-							<div class="card-menu__text">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							</div>
-						</div>
+						<MenuCard
+							price="$20"
+							title="Grilled Okra and Tomatoes"
+							text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+						/><MenuCard
+							price="$18"
+							title="Cucumber Salad"
+							text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+						/><MenuCard
+							price="$12"
+							title="Basil Pancakes"
+							text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+						/>
 					</div>
 				</div>
 			</div>
@@ -62,27 +55,20 @@ import FormReservation from '../components/FormReservation.vue'
 						<img src="/img/menu-bl2-img2.jpg" alt="" />
 					</div>
 					<div class="block-2__cards">
-						<div class="block-2__card card-menu">
-							<div class="card-menu__price">$20</div>
-							<div class="card-menu__title">Deep Sea Snow White Cod Fillet</div>
-							<div class="card-menu__text">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							</div>
-						</div>
-						<div class="block-2__card card-menu">
-							<div class="card-menu__price">$22</div>
-							<div class="card-menu__title">Steak With Rosemary Butter</div>
-							<div class="card-menu__text">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							</div>
-						</div>
-						<div class="block-2__card card-menu">
-							<div class="card-menu__price">$20</div>
-							<div class="card-menu__title">Steaks with Grilled Kimchi</div>
-							<div class="card-menu__text">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							</div>
-						</div>
+						<MenuCard
+							price="$20"
+							title="Deep Sea Snow White Cod Fillet"
+							text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+						/><MenuCard
+							price="$22"
+							title="Steak With Rosemary Butter"
+							text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+						/>
+						<MenuCard
+							price="$20"
+							title="Steaks with Grilled Kimchi"
+							text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+						/>
 					</div>
 				</div>
 			</div>
@@ -98,27 +84,19 @@ import FormReservation from '../components/FormReservation.vue'
 						<img src="/img/menu-bl2-img3.jpg" alt="" />
 					</div>
 					<div class="block-3__cards">
-						<div class="block-3__card card-menu">
-							<div class="card-menu__price">$158</div>
-							<div class="card-menu__title">Wine Pairing</div>
-							<div class="card-menu__text">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							</div>
-						</div>
-						<div class="block-3__card card-menu">
-							<div class="card-menu__price">$168</div>
-							<div class="card-menu__title">Natural Wine Pairing</div>
-							<div class="card-menu__text">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							</div>
-						</div>
-						<div class="block-3__card card-menu">
-							<div class="card-menu__price">$90</div>
-							<div class="card-menu__title">Whisky Flyer</div>
-							<div class="card-menu__text">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							</div>
-						</div>
+						<MenuCard
+							price="$158"
+							title="Wine Pairing"
+							text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+						/><MenuCard
+							price="$168"
+							title="Natural Wine Pairing"
+							text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+						/><MenuCard
+							price="$90"
+							title="Whisky Flyer"
+							text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+						/>
 					</div>
 				</div>
 			</div>
@@ -253,45 +231,19 @@ import FormReservation from '../components/FormReservation.vue'
 	}
 }
 .card-menu {
-	display: flex;
-	flex-direction: column;
-	row-gap: 24px;
 	// .card-menu__price
 
 	&__price {
-		display: flex;
-		flex-direction: row-reverse; /* Heading 4 */
-		padding: 0px 0px 12px 0px;
-		border-bottom: 4px dashed #000;
-		font-family: Rufina;
-		font-size: 48px;
-		font-style: normal;
-		font-weight: 700;
-		line-height: 64px; /* 133.333% */
-		color: #000;
 	}
 
 	// .card-menu__title
 
 	&__title {
-		font-family: Rufina;
-		font-size: 68px;
-		font-style: normal;
-		font-weight: 700;
-		line-height: 84px;
-		color: #000; /* 123.529% */
 	}
 
 	// .card-menu__text
 
 	&__text {
-		font-family: Lato;
-		font-size: 24px;
-		font-style: normal;
-		font-weight: 400;
-		line-height: 140%; /* 33.6px */
-		letter-spacing: 0.48px;
-		color: #000;
 	}
 }
 .menu {

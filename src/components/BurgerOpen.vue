@@ -1,8 +1,8 @@
 <script setup>
 // import { onUnmounted } from 'vue'
 function openBurger() {
-  document.querySelector('.burger').classList.toggle('active')
-  document.querySelector('.nav').classList.toggle('open')
+	document.querySelector('.burger').classList.add('active')
+	document.querySelector('.nav').classList.add('open')
 }
 // onUnmounted(() => {
 //   document.querySelector('.burger').classList.remove('active')
@@ -11,46 +11,46 @@ function openBurger() {
 </script>
 
 <template>
-  <div class="burger" @click="openBurger">
-    <span></span>
-  </div>
+	<div class="burger" @click="openBurger">
+		<span></span>
+	</div>
 </template>
 <style lang="scss" scoped>
 .burger {
-  display: flex;
-  position: relative;
-  z-index: 50;
-  align-items: center;
-  justify-content: flex-end;
-  width: 30px;
-  height: 18px;
+	display: flex;
+	position: relative;
+	z-index: 50;
+	align-items: center;
+	justify-content: flex-end;
+	width: 30px;
+	height: 18px;
 }
 
 .burger span {
-  height: 2px;
-  width: 100%;
-  transform: scale(1);
-  background-color: #faf6f2;
+	height: 2px;
+	width: 100%;
+	transform: scale(1);
+	background-color: #faf6f2;
 }
 
 .burger:before {
-  content: '';
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  background-color: #faf6f2;
-  transition: all 0.3s ease 0s;
-  top: 0;
+	content: '';
+	position: absolute;
+	height: 2px;
+	width: 100%;
+	background-color: #faf6f2;
+	transition: all 0.3s ease 0s;
+	top: 0;
 }
 
 .burger:after {
-  content: '';
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  background-color: #faf6f2;
-  transition: all 0.3s ease 0s;
-  bottom: 0;
+	content: '';
+	position: absolute;
+	height: 2px;
+	width: 100%;
+	background-color: #faf6f2;
+	transition: all 0.3s ease 0s;
+	bottom: 0;
 }
 // .burger.active {
 //   position: absolute;

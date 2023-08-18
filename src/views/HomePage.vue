@@ -1,5 +1,10 @@
 <script setup>
+import CardImage from '../components/CardImage.vue'
 import FormReservation from '../components/FormReservation.vue'
+import MenuCard from '../components/MenuCard.vue'
+import ButtonReadMore from '../components/ButtonReadMore.vue'
+import CardText from '../components/CardText.vue'
+import CardAvatar from '../components/CardAvatar.vue'
 </script>
 
 <template>
@@ -66,34 +71,25 @@ import FormReservation from '../components/FormReservation.vue'
 					This is a section of your menu. Give your section a brief description
 				</div>
 				<div class="block-4__row">
-					<div class="block-4__card card-menu">
-						<div class="card-menu__price">$20</div>
-						<div class="card-menu__title">Deep Sea Snow White Cod Fillet</div>
-						<div class="card-menu__text">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						</div>
-					</div>
-					<div class="block-4__card card-menu">
-						<div class="card-menu__price">$22</div>
-						<div class="card-menu__title">Steak With Rosemary Butter</div>
-						<div class="card-menu__text">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						</div>
-					</div>
-					<div class="block-4__card card-menu">
-						<div class="card-menu__price">$18</div>
-						<div class="card-menu__title">Cucumber Salad</div>
-						<div class="card-menu__text">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						</div>
-					</div>
-					<div class="block-4__card card-menu">
-						<div class="card-menu__price">$90</div>
-						<div class="card-menu__title">Natural Wine Pairing</div>
-						<div class="card-menu__text">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						</div>
-					</div>
+					<MenuCard
+						price="$20"
+						title="Deep Sea Snow White Cod Fillet"
+						text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+					/><MenuCard
+						price="$22"
+						title="Steak With Rosemary Butter"
+						text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+					/>
+					<MenuCard
+						price="$18"
+						title="Cucumber Salad"
+						text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+					/>
+					<MenuCard
+						price="$90"
+						title="Natural Wine Pairing"
+						text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+					/>
 				</div>
 			</div>
 		</div>
@@ -152,51 +148,40 @@ import FormReservation from '../components/FormReservation.vue'
 				<div class="block-7__row">
 					<div class="block-7__cards card">
 						<div class="card__img">
-							<img class="card__jpg" src="/img/home-bl7-1.jpg" alt="" />
-							<div class="card__subtitle">Fashion</div>
+							<CardImage img="/img/home-bl7-1.jpg" />
 						</div>
-						<div class="card__autor autor-card">
-							<img
-								src="/img/home-avatar1.jpg"
-								alt=""
-								class="autor-card__avatar"
-							/>
-							<div class="autor-card__name">Julie Christie</div>
-							<div class="autor-card__month">October 17,2021</div>
-							<div class="autor-card__time">3:33 pm</div>
-							<div class="autor-card__comments">2 comments</div>
-						</div>
-						<div class="card__title">
-							Fruit and vegetables and protection against diseases
-						</div>
-						<div class="card__text">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						</div>
-						<div class="card__button">Read More</div>
+						<CardAvatar
+							img="/img/home-avatar1.jpg"
+							name="Julie Christie"
+							month="October 17,2021"
+							time="3:33 pm"
+							comments="2 comments"
+						/>
+
+						<CardText
+							title="Fruit and vegetables and protection against diseases"
+							text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+						/>
+						<ButtonReadMore />
 					</div>
 					<div class="block-7__cards card">
 						<div class="card__img">
-							<img class="card__jpg" src="/img/home-bl7-2.jpg" alt="" />
-							<div class="card__subtitle">Fashion</div>
+							<CardImage img="/img/home-bl7-2.jpg" />
 						</div>
-						<div class="card__autor autor-card">
-							<img
-								src="/img/home-avatar2.jpg"
-								alt=""
-								class="autor-card__avatar"
-							/>
-							<div class="autor-card__name">Dianne Russell</div>
-							<div class="autor-card__month">October 17,2021</div>
-							<div class="autor-card__time">3:33 pm</div>
-							<div class="autor-card__comments">2 comments</div>
-						</div>
-						<div class="card__title">
-							Asparagus Spring Salad with Rocket, Goat's Cheese
-						</div>
-						<div class="card__text">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						</div>
-						<div class="card__button">Read More</div>
+						<CardAvatar
+							img="/img/home-avatar2.jpg"
+							name="Dianne Russell"
+							month="October 17,2021"
+							time="3:33 pm"
+							comments="2 comments"
+						/>
+
+						<CardText
+							title="Asparagus Spring Salad with Rocket, Goat's Cheese"
+							text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+						/>
+
+						<ButtonReadMore />
 					</div>
 				</div>
 			</div>
@@ -447,9 +432,10 @@ import FormReservation from '../components/FormReservation.vue'
 	// .block-4__row
 
 	&__row {
-		margin: 0px -30px 0px -30px;
+		margin: 0px -30px 218px -30px;
 		display: flex;
 		flex-wrap: wrap;
+		row-gap: 108px;
 	}
 
 	// .block-4__card
@@ -458,51 +444,20 @@ import FormReservation from '../components/FormReservation.vue'
 	}
 }
 .card-menu {
-	display: flex;
-	flex-direction: column;
-	row-gap: 24px;
-	padding: 0px 30px 0px 30px;
-	margin: 0px 0px 108px 0px;
-	flex: 0 1 50%;
-
 	// .card-menu__price
 
 	&__price {
-		display: flex;
-		flex-direction: row-reverse; /* Heading 4 */
-		padding: 0px 0px 12px 0px;
-		border-bottom: 4px dashed #000;
-		font-family: Rufina;
-		font-size: 48px;
-		font-style: normal;
-		font-weight: 700;
-		line-height: 64px; /* 133.333% */
-		color: #000;
 	}
 
 	// .card-menu__title
 
 	&__title {
-		/* Heading 3 */
-		font-family: Rufina;
-		font-size: 68px;
-		font-style: normal;
-		font-weight: 700;
-		line-height: 84px;
-		color: #000; /* 123.529% */
 	}
 
 	// .card-menu__text
 
 	&__text {
 		/* Body */
-		font-family: Lato;
-		font-size: 24px;
-		font-style: normal;
-		font-weight: 400;
-		line-height: 140%; /* 33.6px */
-		letter-spacing: 0.48px;
-		color: #000;
 	}
 }
 .home {
@@ -650,7 +605,9 @@ import FormReservation from '../components/FormReservation.vue'
 	// .card__title
 
 	&__title {
-		color: #000;
+		color: var(--000000, #000);
+		text-align: center;
+		font-feature-settings: 'clig' off, 'liga' off;
 
 		/* Heading 4 */
 		font-family: Rufina;
@@ -658,13 +615,14 @@ import FormReservation from '../components/FormReservation.vue'
 		font-style: normal;
 		font-weight: 700;
 		line-height: 64px; /* 133.333% */
-		text-align: center;
 	}
 
 	// .card__tex
 
 	&__text {
-		color: #4d4d4d;
+		color: var(--4-d-4-d-4-d, #4d4d4d);
+		text-align: center;
+		font-feature-settings: 'clig' off, 'liga' off;
 
 		/* Body */
 		font-family: Lato;
@@ -673,7 +631,6 @@ import FormReservation from '../components/FormReservation.vue'
 		font-weight: 400;
 		line-height: 140%; /* 33.6px */
 		letter-spacing: 0.48px;
-		text-align: center;
 	}
 }
 // BLOCK-7
@@ -720,21 +677,6 @@ import FormReservation from '../components/FormReservation.vue'
 	// .card__subtitle
 
 	&__subtitle {
-		position: absolute;
-		top: 12px;
-		right: 12px;
-		width: 203px;
-		height: 62px;
-		padding: 10px 30px;
-		background: #5e6600;
-		text-align: center;
-		/* Heading 6 */
-		font-family: Rufina;
-		font-size: 26px;
-		font-style: normal;
-		font-weight: 700;
-		line-height: 48px; /* 184.615% */
-
 		/* Avatar */
 	}
 
@@ -758,56 +700,16 @@ import FormReservation from '../components/FormReservation.vue'
 	// .card__title
 
 	&__title {
-		margin: 0px 72px 18px 75px;
-		padding: 0px 0px 18px 0px;
-		border-bottom: 4px dashed;
-		/* Heading 4 */
-		font-family: Rufina;
-		font-size: 48px;
-		font-style: normal;
-		font-weight: 700;
-		line-height: 64px;
-		text-align: start;
-		color: #000; /* 133.333% */
 	}
 
 	// .card__text
 
 	&__text {
-		color: #4d4d4d;
-		margin: 0px 72px 46px 75px;
-		/* Excerpt */
-		font-family: Lato;
-		font-size: 22px;
-		font-style: normal;
-		font-weight: 700;
-		line-height: 140%; /* 30.8px */
-		letter-spacing: 0.44px;
-		text-align: start;
 	}
 
 	// .card__button
 
 	&__button {
-		position: relative;
-		margin: 0px 72px 0px 75px;
-		color: #4d4d4d;
-		text-align: start;
-		font-family: Lato;
-		font-size: 22px;
-		font-style: normal;
-		font-weight: 700;
-		line-height: 140%; /* 30.8px */
-		letter-spacing: 0.44px;
-		&:after {
-			content: '';
-			position: absolute;
-			background-image: url(/icons/home-bl7.svg);
-			background-repeat: no-repeat;
-			margin: 0px 0px 0px 10px;
-			width: 100%;
-			height: 100%;
-		}
 	}
 }
 .autor-card {
