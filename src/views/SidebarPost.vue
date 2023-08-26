@@ -11,7 +11,7 @@ import CardAvatar from '../components/CardAvatar.vue'
 					Three Ideas for Cooking Goat Meat at Home
 				</h2>
 				<CardAvatar
-					img="/img/home-avatar1.jpg"
+					img="/img/Avatar-1.png"
 					name="Julie Christie"
 					month="October 17,2021"
 					time="3:33 pm"

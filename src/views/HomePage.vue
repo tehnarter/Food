@@ -148,7 +148,7 @@ import CardAvatar from '../components/CardAvatar.vue'
 				<div class="block-7__row">
 					<div class="block-7__cards card">
 						<div class="card__img">
-							<CardImage img="/img/home-bl7-1.jpg" />
+							<CardImage img="/img/card-1.jpg" />
 						</div>
 						<CardAvatar
 							img="/img/home-avatar1.jpg"
@@ -166,7 +166,7 @@ import CardAvatar from '../components/CardAvatar.vue'
 					</div>
 					<div class="block-7__cards card">
 						<div class="card__img">
-							<CardImage img="/img/home-bl7-2.jpg" />
+							<CardImage img="/img/card-2.jpg" />
 						</div>
 						<CardAvatar
 							img="/img/home-avatar2.jpg"
