@@ -4,13 +4,31 @@
 		<div class="form__container">
 			<h2 class="form__title">Make a Reservation</h2>
 			<div class="form__text">Get in touch with restaurant</div>
-			<form class="form__form" @submit.prevent="submitForm">
+			<form action="#" class="form__form" method="get">
 				<div class="form__row">
-					<input class="form__date" v-model="date" type="date" id="date" />
-					<input class="form__time" v-model="email" type="email" id="email" />
-					<input class="form__person" v-model="email" type="email" id="email" />
+					<input
+						class="form__date"
+						type="date"
+						name="date"
+						value="2023-08-26"
+					/>
+					/>
+					<select class="form__time" name="time">
+						<option value="1">6:00 pm</option>
+						<option value="2">7:00 pm</option>
+						<option value="3">8:00 pm</option>
+						<option value="4">9:00 pm</option>
+						<option value="5">10:00 pm</option>
+					</select>
+					<select class="form__person" name="person">
+						<option value="1">1 Person</option>
+						<option value="2">2 Person</option>
+						<option value="3">3 Person</option>
+						<option value="4">4 Person</option>
+						<option value="5">5 Person</option>
+					</select>
 				</div>
-				<button class="form__button" type="submit">Book Now</button>
+				<button class="form__button">Book Now</button>
 			</form>
 		</div>
 	</div>
