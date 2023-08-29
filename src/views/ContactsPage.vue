@@ -82,7 +82,6 @@
 						placeholder="Email"
 						required
 					/>
-					/>
 					<input
 						class="form-contact__phone"
 						type="tel"
@@ -96,7 +95,6 @@
 						type="date"
 						name="date"
 						value="2023-08-26"
-					/>
 					/>
 					<select class="form-contact__time" name="time">
 						<option value="1">6:00 pm</option>

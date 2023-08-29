@@ -3,6 +3,12 @@ import CardImage from '../components/CardImage.vue'
 import CardAvatar from '../components/CardAvatar.vue'
 import CardText from '../components/CardText.vue'
 import ButtonReadMore from '../components/ButtonReadMore.vue'
+import NavBreadcrumbs from '../components/NavBreadcrumbs.vue'
+const navMenuPage = [
+	{ name: 'Home ', path: '/' },
+	{ name: ' Blog ', path: '#' },
+	{ name: ' Blog List One Column', path: '#' },
+]
 </script>
 
 <template>
@@ -17,7 +23,7 @@ import ButtonReadMore from '../components/ButtonReadMore.vue'
 		</div>
 		<div class="one__main">
 			<div class="one__container">
-				<div class="one__menu"></div>
+				<NavBreadcrumbs :breadcrumbs="navMenuPage" />
 				<div class="one__cards-row">
 					<div class="one__card-row">
 						<div class="one__card-img">
@@ -82,7 +88,7 @@ import ButtonReadMore from '../components/ButtonReadMore.vue'
 						</div>
 						<div class="one__card-text">
 							<CardAvatar
-								img="public/img/Avatar-4.png"
+								img="/img/Avatar-4.png"
 								name="Theresa Webb"
 								month="October 17,2021"
 								time="3:33 pm"
@@ -168,6 +174,7 @@ import ButtonReadMore from '../components/ButtonReadMore.vue'
 	// .one__main
 
 	&__main {
+		padding: 129px 0px 128px 0px;
 	}
 
 	// .one__container
@@ -199,6 +206,7 @@ import ButtonReadMore from '../components/ButtonReadMore.vue'
 	// .one__card-img
 
 	&__card-img {
+		position: relative;
 		flex: 0 1 50%;
 	}
 

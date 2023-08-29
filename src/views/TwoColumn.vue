@@ -3,6 +3,12 @@ import CardImage from '../components/CardImage.vue'
 import CardAvatar from '../components/CardAvatar.vue'
 import CardText from '../components/CardText.vue'
 import ButtonReadMore from '../components/ButtonReadMore.vue'
+import NavBreadcrumbs from '../components/NavBreadcrumbs.vue'
+const navMenuPage = [
+	{ name: 'Home', path: '/' },
+	{ name: 'Blog', path: '#' },
+	{ name: 'Blog Two Columns', path: '#' },
+]
 </script>
 
 <template>
@@ -17,6 +23,7 @@ import ButtonReadMore from '../components/ButtonReadMore.vue'
 		</div>
 		<div class="two__main">
 			<div class="two__container">
+				<NavBreadcrumbs :breadcrumbs="navMenuPage" />
 				<div class="two__menu"></div>
 				<div class="two__cards-row">
 					<div class="two__card-row">
@@ -188,6 +195,7 @@ import ButtonReadMore from '../components/ButtonReadMore.vue'
 	// .two__main
 
 	&__main {
+		padding: 129px 0px 128px 0px;
 	}
 
 	// .two__container
@@ -219,6 +227,8 @@ import ButtonReadMore from '../components/ButtonReadMore.vue'
 	// .two__card-img
 
 	&__card-img {
+		position: relative;
+		margin: 0px 0px 68px 0px;
 	}
 
 	// .two__card-text
